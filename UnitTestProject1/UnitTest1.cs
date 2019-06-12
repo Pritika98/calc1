@@ -47,7 +47,7 @@ namespace UnitTestProject1
         }
         
         [TestMethod]
-        public void TestMethod4()
+        public void TestMethod5()
         {
             int a = 6;
             int b = 3;
