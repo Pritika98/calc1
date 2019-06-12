@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  UnitTestProject1:
+    environment: 
+      - BLOWUP
+    image: UnitTestProject1
+    build:
+      context: .
+    entrypoint: dotnet test --logger trx --results-directory /var/temp
+    volumes:
+      - /opt/vsts/work/_temp:/var/temp
