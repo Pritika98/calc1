@@ -61,7 +61,7 @@ stages:
         dockerComposeFile: '**/docker-compose.tests.yml'
         qualifyImageNames: false
         action: 'Run a Docker Compose command'
-        dockerComposeFileArgs: '$(System.DefaultWorkingDirectory)'
+        dockerComposeFileArgs: 'a=$(System.DefaultWorkingDirectory)'
         dockerComposeCommand: 'up --abort-on-container-exit'
     - task: PublishTestResults@2
       inputs:
