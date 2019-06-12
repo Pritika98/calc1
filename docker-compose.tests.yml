@@ -6,7 +6,7 @@ services:
       - BLOWUP
     image: dockerazure.azurecr.io/compose-img:349
     build:
-      context: .
+      context: ./Dockerfile
     entrypoint: dotnet test --logger trx --results-directory /var/temp
     volumes:
       - ${a}:/var/temp
