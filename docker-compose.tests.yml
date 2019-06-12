@@ -4,7 +4,7 @@ services:
   UnitTestProject1:
     environment: 
       - BLOWUP
-    image: UnitTestProject1
+    image: dockerazure.azurecr.io/compose-img:349
     build:
       context: .
     entrypoint: dotnet test --logger trx --results-directory /var/temp
