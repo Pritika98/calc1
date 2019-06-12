@@ -32,11 +32,11 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'conn'
+        containerRegistry: 'dockerazure'
         command: 'login'
     - task: Docker@2
       inputs:
-        containerRegistry: 'conn'
+        containerRegistry: 'dockerazure'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
     - script: |
