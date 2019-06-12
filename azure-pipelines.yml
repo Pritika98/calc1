@@ -64,6 +64,7 @@ stages:
         action: 'Run a Docker Compose command'
         dockerComposeFileArgs: 'a=$(System.DefaultWorkingDirectory)'
         dockerComposeCommand: 'up --abort-on-container-exit'
+      continueOnError: true
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'VSTest'
