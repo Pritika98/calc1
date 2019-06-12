@@ -51,6 +51,7 @@ stages:
         azureContainerRegistry: '{"loginServer":"dockerazure.azurecr.io", "id" : "/subscriptions/7489b9b9-8abe-4b02-a0d9-f09f368df55f/resourceGroups/tcmdaily/providers/Microsoft.ContainerRegistry/registries/dockerazure"}'
         dockerComposeFile: '**/docker-compose.tests.yml'
         action: 'Build services'
+        dockerComposeFileArgs: 'a=$(System.DefaultWorkingDirectory)'
         additionalImageTags: '$(Build.BuildId)'
         includeLatestTag: true
     - task: DockerCompose@0
@@ -76,6 +77,7 @@ stages:
         dockerComposeFile: '**/docker-compose.tests.yml'
         qualifyImageNames: false
         action: 'Push services'
+        dockerComposeFileArgs: 'a=$(System.DefaultWorkingDirectory)'
         additionalImageTags: '$(Build.BuildId)'
         includeLatestTag: true
     
