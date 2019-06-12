@@ -9,4 +9,4 @@ services:
       context: .
     entrypoint: dotnet test --logger trx --results-directory /var/temp
     volumes:
-      - $(System.DefaultWorkingDirectory):/var/temp
+      - ${a}:/var/temp
