@@ -45,5 +45,15 @@ namespace UnitTestProject1
             int r = p.Div(a, b);
             Assert.AreEqual(r, ex);
         }
+        
+        [TestMethod]
+        public void TestMethod4()
+        {
+            int a = 6;
+            int b = 3;
+            int ex = 5;
+            int r = p.Div(a, b);
+            Assert.AreEqual(r, ex);
+        }
     }
 }
