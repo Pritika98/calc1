@@ -48,10 +48,20 @@ stages:
       inputs:
         containerregistrytype: 'Azure Container Registry'
         azureSubscription: 'TCMTest(7489b9b9-8abe-4b02-a0d9-f09f368df55f)'
-        azureContainerRegistry: 'dockerazure'
+        azureContainerRegistry: '{"loginServer":"dockerazure.azurecr.io", "id" : "/subscriptions/7489b9b9-8abe-4b02-a0d9-f09f368df55f/resourceGroups/tcmdaily/providers/Microsoft.ContainerRegistry/registries/dockerazure"}'
         dockerComposeFile: '**/docker-compose.tests.yml'
+        action: 'Build services'
+        additionalImageTags: '$(Build.BuildId)'
+        includeLatestTag: true
+    - task: DockerCompose@0
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: 'TCMTest(7489b9b9-8abe-4b02-a0d9-f09f368df55f)'
+        azureContainerRegistry: '{"loginServer":"dockerazure.azurecr.io", "id" : "/subscriptions/7489b9b9-8abe-4b02-a0d9-f09f368df55f/resourceGroups/tcmdaily/providers/Microsoft.ContainerRegistry/registries/dockerazure"}'
+        dockerComposeFile: '**/docker-compose.tests.yml'
+        qualifyImageNames: false
         action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'docker compose up'
+        dockerComposeCommand: 'up --abort-on-container-exit'
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'VSTest'
