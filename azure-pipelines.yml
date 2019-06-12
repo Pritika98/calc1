@@ -67,6 +67,16 @@ stages:
         testResultsFormat: 'VSTest'
         testResultsFiles: '*.trx'
         searchFolder: '$(System.DefaultWorkingDirectory)'
+    - task: DockerCompose@0
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: 'TCMTest(7489b9b9-8abe-4b02-a0d9-f09f368df55f)'
+        azureContainerRegistry: '{"loginServer":"dockerazure.azurecr.io", "id" : "/subscriptions/7489b9b9-8abe-4b02-a0d9-f09f368df55f/resourceGroups/tcmdaily/providers/Microsoft.ContainerRegistry/registries/dockerazure"}'
+        dockerComposeFile: '**/docker-compose.tests.yml'
+        qualifyImageNames: false
+        action: 'Push services'
+        additionalImageTags: '$(Build.BuildId)'
+        includeLatestTag: true
     
 
 
