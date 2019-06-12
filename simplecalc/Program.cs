@@ -18,7 +18,10 @@ namespace simplecalc
         }
         public int Div(int x,int y)
         {
-            return (x / y);
+           if(y!=0)
+               return (x / y);
+           else
+               return 0;
         }
         static void Main(string[] args)
         {
