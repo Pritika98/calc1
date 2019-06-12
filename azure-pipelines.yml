@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '7489b9b9-8abe-4b02-a0d9-f09f368df55f'
+  dockerRegistryServiceConnection: '0e17cdb1-fb53-4f4b-b64a-8c76b58bd9f4'
   imageRepository: 'cimage1'
   containerRegistry: 'dockerazure.azurecr.io'
   dockerfilePath: '**/Dockerfile'
