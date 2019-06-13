@@ -2,7 +2,7 @@ version: '3'
 
 services:
   simplecalc:
-    image: dockerazure.azurecr.io/compose-img:349
+    image: dockerazure.azurecr.io/compose-img:800
     build:
       context: .
       dockerfile: simplecalc/Dockerfile
